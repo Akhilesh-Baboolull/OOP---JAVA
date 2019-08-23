@@ -8,6 +8,11 @@
  */
 public class Person {
 	
+	//Static attributes
+	private static int counter = 0;
+	
+	/********************/
+	//object attributes
 	private String nid;
 	private String firstName;
 	private String lastName;
@@ -31,6 +36,8 @@ public class Person {
 		this.gender = '-';
 		this.height = 0.0;
 		this.weight = 0.0;
+		setCounter((getCounter()+1));
+		
 	}
 	
 	/**
@@ -46,7 +53,7 @@ public class Person {
 		this.gender = '-';
 		this.height = 0.0;
 		this.weight = weight;
-	
+		setCounter((getCounter()+1));
 
 		
 	}
@@ -71,6 +78,7 @@ public class Person {
 		this.gender = gender;
 		this.height = height;
 		this.weight = weight;
+		setCounter((getCounter()+1));
 	}
 
 	
@@ -130,12 +138,25 @@ public class Person {
 	public double getWeight() {
 		return this.weight;
 	}
+	/**
+	 * 
+	 * @param height
+	 * @param weight
+	 * @return
+	 */
 	
-	public double calcBmi(double height, double weight) {
+	public static double calcBmi(double height, double weight) {
 		
 		return (weight/ Math.pow((height/100), 2));
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
+	public double calcBmi() {
+		
+		return (this.weight/ Math.pow((this.height/100), 2));
+	}
 		/*Setters*/
 	
 	/**
@@ -211,6 +232,25 @@ public class Person {
 			return false;
 		}
 	}
+	
+	/**
+	 * 
+	 * @return the counter
+	 */
+	public static int getCounter() {
+		return counter;
+	}
+
+	/**
+	 * 
+	 * @param counter the counter to set
+	 */
+	public static void setCounter(int counter) {
+		Person.counter = counter;
+	}
+
+	
+	
 	
 	
 	
