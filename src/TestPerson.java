@@ -80,7 +80,7 @@ public class TestPerson {
 		System.out.println("Number of Persons: " + Person.getCounter());
 		
 		for (int i=0; i <size; i++) {
-			System.out.println(dbaStuds1[i]);
+			System.out.println(dbaStuds1[i].toString());
 		}
 		
 		for(int i=0; i < size; i++) {
